@@ -1,0 +1,62 @@
+POST localhost:8080/publish
+Content-Type: application/json
+
+
+{
+  "colors": [
+    {
+      "color": "255,0,0"
+    },
+    {
+      "color": "255,0,0",
+      "publish": true
+    },
+    {
+      "publish": true,
+      "color": "0,255,0"
+    },
+    {
+      "publish": true,
+      "color": null
+    },
+    {
+      "publish": true,
+      "color": "0,0,255"
+    },
+    {
+      "publish": false,
+      "color": ""
+    },
+    {
+      "publish": true,
+      "color": ""
+    },
+    {
+      "publish": true,
+      "color": null
+    }
+  ]
+}
+
+
+
+###
+
+POST localhost:8080/colors/publish
+Content-Type: application/json
+
+
+{
+  "colors": [
+    {
+      "publish": true,
+      "color": ""
+    },
+    {
+      "publish": true,
+      "color": null
+    }
+  ]
+}
+
+###

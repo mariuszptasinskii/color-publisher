@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: mptasinski.co.brick.task
+---
+testFramework: junit
+sourceLanguage: java
