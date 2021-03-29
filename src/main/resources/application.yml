@@ -1,8 +1,6 @@
-micronaut:
-  application:
-    name: mptasinski-co-brick-task
+server:
+  port : 8090
 
-#there was a typo in the task *.yml example that gave me a nightmare here
 colors:
   mapping:
     red: "255,0,0"
