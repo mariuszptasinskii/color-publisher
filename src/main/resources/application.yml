@@ -1,5 +1,22 @@
+spring:
+  application:
+    name: color-publisher
+  rabbit:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      function.definition: sendColor;receive
+      bindings:
+        sendColor-out-0:
+          destination: colors
+        receive-in-0:
+          destination: colors
+
 server:
-  port : 8090
+  port : 8091
 
 colors:
   mapping:
