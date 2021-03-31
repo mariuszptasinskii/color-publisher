@@ -1,11 +1,9 @@
-package pl.mptasinski.colorpublisher.api.config
+package pl.mptasinski.colorpublisher.config
 
 import com.google.common.collect.BiMap
 import com.google.common.collect.HashBiMap
 import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.boot.context.properties.ConstructorBinding
-import reactor.core.publisher.Mono
-import reactor.kotlin.core.publisher.toMono
 import javax.annotation.PostConstruct
 
 @ConstructorBinding

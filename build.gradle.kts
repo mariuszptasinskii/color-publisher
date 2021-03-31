@@ -20,6 +20,7 @@ extra["springCloudVersion"] = "2020.0.2"
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-amqp")
     implementation("org.springframework.boot:spring-boot-starter-webflux")
+    implementation("org.springframework.cloud:spring-cloud-starter-stream-rabbit")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -32,8 +33,9 @@ dependencies {
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
-    runtimeOnly("ch.qos.logback:logback-classic:1.2.3")
     testImplementation("org.springframework.amqp:spring-rabbit-test")
+    testImplementation("org.springframework.cloud:spring-cloud-stream-test-support")
+    runtimeOnly("ch.qos.logback:logback-classic:1.2.3")
 }
 
 dependencyManagement {

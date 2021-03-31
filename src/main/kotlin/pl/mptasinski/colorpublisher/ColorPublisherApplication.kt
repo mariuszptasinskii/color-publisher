@@ -3,7 +3,7 @@ package pl.mptasinski.colorpublisher
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.boot.runApplication
-import pl.mptasinski.colorpublisher.api.config.ColorsConfig
+import pl.mptasinski.colorpublisher.config.ColorsConfig
 
 @SpringBootApplication
 @EnableConfigurationProperties(ColorsConfig::class)

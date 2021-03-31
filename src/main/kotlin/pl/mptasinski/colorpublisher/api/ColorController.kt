@@ -3,9 +3,8 @@ package pl.mptasinski.colorpublisher.api
 import mu.KLogging
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import org.springframework.web.reactive.function.server.ServerResponse
 import pl.mptasinski.colorpublisher.api.model.ColorRequest
-import pl.mptasinski.colorpublisher.api.service.ColorService
+import pl.mptasinski.colorpublisher.service.ColorService
 import reactor.core.publisher.Mono
 import javax.validation.Valid
 
