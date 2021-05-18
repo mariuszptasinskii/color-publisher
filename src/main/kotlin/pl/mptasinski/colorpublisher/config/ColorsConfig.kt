@@ -22,7 +22,12 @@ data class ColorsConfig(
         return color?.let {
             colorsBiMapping?.get(it)
         }
+    }
 
+    fun getRGBColor(color: String?): String? {
+        return color?.let {
+            mapping[it]
+        }
     }
 
 }
