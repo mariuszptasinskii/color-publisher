@@ -7,29 +7,17 @@ import org.springframework.http.MediaType
 import org.springframework.web.reactive.function.server.RouterFunction
 import org.springframework.web.reactive.function.server.ServerResponse
 import org.springframework.web.reactive.function.server.router
-import pl.mptasinski.colorpublisher.api.model.Color
-import pl.mptasinski.colorpublisher.api.model.ColorRequest
-import pl.mptasinski.colorpublisher.service.ColorService
-import reactor.core.publisher.Mono
+import pl.mptasinski.colorpublisher.service.ColorHandler
 
 @Configuration
-class ColorRouter(private val colorService: ColorService) {
-
-    companion object : KLogging()
+class ColorRouter(private val colorHandler: ColorHandler) {
 
     @Bean
     fun router(): RouterFunction<ServerResponse> = router {
         accept(MediaType.APPLICATION_JSON).nest {
             "/colors".nest {
-                GET() {
-                    //todo add pathVariable and map color
-                    ServerResponse.ok().bodyValue("Your color")
-                }
-                POST("/publish") { it ->
-                    it.bodyToMono(ColorRequest::class.java)
-                        .flatMap { colorService.publishColors(it.colors) }
-                        .flatMap { ServerResponse.accepted().bodyValue(true) }
-                }
+                GET("/{color}", colorHandler::handleMapToRgbColor)
+                POST("/publish", colorHandler::handlePublishColors)
             }
         }
     }
